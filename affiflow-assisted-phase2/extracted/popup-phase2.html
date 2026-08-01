@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>AffiFlow Capture</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+
+  <body>
+    <main class="app">
+      <header class="header">
+        <div class="logo">AF</div>
+        <div>
+          <h1>AffiFlow Capture</h1>
+          <p>Product Scanner &amp; Assisted Media</p>
+        </div>
+      </header>
+
+      <section class="bridge" id="bridgeStatus">
+        <span class="statusDot"></span>
+        <span id="bridgeStatusText">Checking AffiFlow Desktop...</span>
+      </section>
+
+      <nav class="captureTabs" aria-label="AffiFlow Capture tools">
+        <button
+          id="scannerTabButton"
+          class="captureTab active"
+          type="button"
+        >
+          Product Scanner
+        </button>
+
+        <button
+          id="mediaTabButton"
+          class="captureTab"
+          type="button"
+        >
+          Media Capture
+          <span id="mediaSessionBadge" class="captureTabBadge" hidden>1</span>
+        </button>
+      </nav>
+
+      <section id="scannerView" class="captureView">
+        <section class="scanPanel">
+          <div class="scanLimitRow">
+            <label for="maximumProductsSelect">Products to scan</label>
+            <select id="maximumProductsSelect">
+              <option value="3">Top 3</option>
+              <option value="10">Top 10</option>
+              <option value="20">Top 20</option>
+              <option value="50">Top 50</option>
+              <option value="100">Top 100</option>
+            </select>
+          </div>
+
+          <button id="scanButton" class="primaryButton" type="button">
+            Scan Products
+          </button>
+
+          <p class="scanHint">
+            Scan products first, review the images, then choose which
+            products should enter Approval Queue.
+          </p>
+        </section>
+
+        <section class="summary" id="summary">
+          Open Shopee Affiliate Product Offer and press Scan Products.
+        </section>
+
+        <section class="selectionToolbar" id="selectionToolbar" hidden>
+          <span id="selectedSummary">0 selected</span>
+          <div>
+            <button id="selectAllButton" class="smallButton" type="button">
+              Select All
+            </button>
+            <button id="clearSelectionButton" class="smallButton" type="button">
+              Clear
+            </button>
+          </div>
+        </section>
+
+        <section class="candidateList" id="candidateList"></section>
+
+        <footer class="footer scannerFooter">
+          <button
+            id="addToQueueButton"
+            class="queueButton"
+            type="button"
+            disabled
+          >
+            Add Selected to Approval Queue
+          </button>
+          <p id="message" class="message"></p>
+        </footer>
+      </section>
+
+      <section id="mediaView" class="captureView" hidden>
+        <section id="mediaSessionCard" class="mediaSessionCard">
+          <div class="mediaSessionLabel">Active Product</div>
+          <h2 id="mediaProductName">Waiting for Product Catalog...</h2>
+          <p id="mediaProductUrl">Press Capture Media from AffiFlow Desktop.</p>
+        </section>
+
+        <section class="mediaActionPanel">
+          <button id="discoverMediaButton" class="primaryButton" type="button">
+            Scan Current Product Page
+          </button>
+          <p class="scanHint">
+            Keep the Shopee product page open. AffiFlow will read the gallery
+            and videos already loaded in this tab.
+          </p>
+        </section>
+
+        <section id="mediaSummary" class="summary">
+          Press Capture Media in Product Catalog, then open this extension.
+        </section>
+
+        <section id="mediaSelectionToolbar" class="selectionToolbar" hidden>
+          <span id="mediaSelectedSummary">0 selected</span>
+          <div>
+            <button id="mediaSelectAllButton" class="smallButton" type="button">
+              Select All
+            </button>
+            <button id="mediaClearButton" class="smallButton" type="button">
+              Clear
+            </button>
+          </div>
+        </section>
+
+        <section id="mediaGrid" class="mediaGrid">
+          <div class="emptyState">
+            Detected product images and videos will appear here.
+          </div>
+        </section>
+
+        <footer class="footer mediaFooter">
+          <button id="saveMediaButton" class="queueButton" type="button" disabled>
+            Save Selected to AffiFlow
+          </button>
+          <p id="mediaMessage" class="message"></p>
+        </footer>
+      </section>
+    </main>
+
+    <script src="popup.js"></script>
+    <script src="popup-assisted-media.js"></script>
+  </body>
+</html>

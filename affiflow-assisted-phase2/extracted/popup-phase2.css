@@ -1,0 +1,162 @@
+
+/* AFFIFLOW_ASSISTED_MEDIA_PHASE2 */
+.captureTabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 13px;
+  padding: 4px;
+  border: 1px solid #273a53;
+  border-radius: 12px;
+  background: #0b1728;
+}
+
+.captureTab {
+  position: relative;
+  min-height: 38px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #8fa7c1;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.captureTab.active {
+  background: #17304b;
+  color: #dff7e8;
+  box-shadow: inset 0 0 0 1px rgba(34, 197, 94, 0.35);
+}
+
+.captureTabBadge {
+  display: inline-grid;
+  min-width: 17px;
+  height: 17px;
+  margin-left: 5px;
+  place-items: center;
+  border-radius: 999px;
+  background: #22c55e;
+  color: #052e16;
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.captureView[hidden] {
+  display: none !important;
+}
+
+.mediaSessionCard,
+.mediaActionPanel {
+  margin-bottom: 12px;
+  padding: 14px;
+  border: 1px solid #2b405b;
+  border-radius: 13px;
+  background: rgba(15, 28, 47, 0.96);
+}
+
+.mediaSessionCard.ready {
+  border-color: rgba(34, 197, 94, 0.48);
+  background: rgba(20, 83, 45, 0.22);
+}
+
+.mediaSessionLabel {
+  margin-bottom: 6px;
+  color: #7dd3fc;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mediaSessionCard h2 {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 0 0 6px;
+  color: #f1f5f9;
+  font-size: 13px;
+  line-height: 1.45;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.mediaSessionCard p {
+  overflow: hidden;
+  color: #8fa7c1;
+  font-size: 10px;
+  line-height: 1.45;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mediaActionPanel .primaryButton {
+  margin-top: 0;
+}
+
+.mediaGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding-bottom: 150px;
+}
+
+.mediaAssetCard {
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  border: 1px solid #2b405b;
+  border-radius: 12px;
+  background: #0d1a2c;
+}
+
+.mediaAssetCard.selected {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.3);
+}
+
+.mediaAssetPreview {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border: 0;
+  background: #07111f;
+  object-fit: cover;
+}
+
+video.mediaAssetPreview {
+  object-fit: contain;
+}
+
+.mediaAssetFooter {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px;
+}
+
+.mediaAssetCheckbox {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 17px;
+  accent-color: #22c55e;
+}
+
+.mediaAssetType {
+  min-width: 0;
+  flex: 1;
+  color: #c4d3e5;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.mediaAssetNumber {
+  color: #6f89a7;
+  font-size: 9px;
+}
+
+.mediaFooter {
+  display: block;
+}
+
+.message.mediaProgress {
+  color: #7dd3fc;
+}
